@@ -272,3 +272,4 @@ jobs:
         run: |
           npx textlint -f @microsoft/eslint-formatter-sarif README.md | \
             reviewdog -f=sarif -name="textlint" -reporter=github-check -level=info
+            
