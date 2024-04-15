@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: packages/code-review-gpt
+        working-directory: /
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       BASE_SHA: ${{ github.event.pull_request.base.sha }}
