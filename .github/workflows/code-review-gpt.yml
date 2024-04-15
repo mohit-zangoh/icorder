@@ -30,22 +30,22 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install code-review-gpt
 
-      - name: Build package
-        run: npm run build
+      # - name: Build package
+      #   run: npm run build
 
       - name: Run code review script
-        run: npm run start -- --ci=github --model=gpt-3.5-turbo
+        run: npx code-review-gpt configure --setupTarget=github --model=gpt-3.5-turbo
 
       - name: Run linting test
-        run: npm run lint-test
+        run: npx code-review-gpt lint-test
 
       - name: Run unit tests
-        run: npm run test-unit
+        run: npx code-review-gpt test-unit
 
       - name: Run prompt tests
-        run: npm run test -- --ci=github --model=gpt-3.5-turbo
+        run: npx code-review-gpt configure --setupTarget=github --model=gpt-3.5-turbo
 
   # deploy_core_to_dev:
   #   runs-on: ubuntu-latest
